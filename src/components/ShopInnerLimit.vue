@@ -39,9 +39,13 @@ export default {
         font-size: 15rem;
     }
     ul{
-        padding: 0;
+        padding: 0 0 0 1.5rem;
+        margin: 0;
+        font-size: 15rem;
     }
     .limit-inner{
-        padding: .9rem .9rem;
+        padding: .5rem .9rem .5rem 1.72rem;
+        font-size: 15rem;
+        line-height: 1.95rem;
     }
 </style>

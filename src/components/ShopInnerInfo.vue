@@ -86,7 +86,7 @@ export default {
         height: .6rem;
         position: absolute;
         right: 1.9rem;
-        top: 1.2rem;
+        top: 1.34rem;
         border-bottom: 2px solid #06c1ae;
         border-left: 2px solid #06c1ae;
         transform: rotate(-135deg);

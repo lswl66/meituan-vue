@@ -2,7 +2,7 @@
     <div class="shop-details">
         <div class="header">
             <div class="header-item toback-btn">
-                <img src="../images/write-toback.png">
+                <router-link to='/'><img src="../images/write-toback.png"></router-link>
             </div>
             <div class="header-item header-title">团购详情</div>
             <div class="header-item header-icon">
@@ -47,6 +47,52 @@
             <div class="shop-details-item">
                 <ShopInnerLimit :item="shopLimit"></ShopInnerLimit>
             </div>
+            <div class="shop-details-item">
+                <ShopInnerCommentText :item="commentText"></ShopInnerCommentText>
+            </div>
+            <div class="shop-details-item">
+                <ShopInnerRecommend 
+                    :item="recommendShop"
+                    :shop="desctitle"></ShopInnerRecommend>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="nav-bread">当前位置：西安团购 > {{desctitle}}</div>
+            <div class="footer-btn">
+                <div class="footer-btn-left">
+                    <div class="btn-login btn-item"><a href="#">登录</a></div>
+                    <div class="btn-register btn-item"><a href="#">注册</a></div>
+                </div>
+                <div class="footer-btn-right">
+                     城市：<div class="btn-city btn-item"><a href="#">西安</a></div>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <div class="footer-nav-item">
+                <a href="#">首页</a>
+                </div>
+                <div class="footer-nav-item">
+                <a href="#">订单</a>
+                </div>
+                <div class="footer-nav-item">
+                <a href="#">客户端</a>
+                </div>
+                <div class="footer-nav-item">
+                <a href="#">电脑版</a>
+                </div>
+                <div class="footer-nav-item">
+                <a href="#">帮助</a>
+                </div>
+            </div>
+            <div class="footer-link">
+                友情链接：<a href="https://m.maoyan.com/?channel=touch_group">猫眼电影</a>
+            </div>
+            <div class="footer-copyright">
+                <span>
+                ©2019 美团网 
+                <a href="http://www.beian.miit.gov.cn/">京ICP证070791号</a>
+                </span>
+            </div>
         </div>
     </div>
 </template>
@@ -57,6 +103,8 @@ import ShopInnerComment from '../components/ShopInnerComment.vue'
 import ShopInnerInfo from '../components/ShopInnerInfo.vue'
 import ShopInnerFood from '../components/ShopInnerFood.vue'
 import ShopInnerLimit from '../components/ShopInnerLimit.vue'
+import ShopInnerCommentText from '../components/ShopInnerCommentText.vue'
+import ShopInnerRecommend from '../components/ShopInnerRecommend.vue'
 
 export default {
     name: 'ShopDetails',
@@ -65,7 +113,9 @@ export default {
         ShopInnerComment,
         ShopInnerInfo,
         ShopInnerFood,
-        ShopInnerLimit
+        ShopInnerLimit,
+        ShopInnerCommentText,
+        ShopInnerRecommend
     },
     data(){
         return {
@@ -114,7 +164,145 @@ export default {
                     '商家提供免费WiFi',
                     '停车位收费标准：详情请咨询商家',
                 ]
-            }
+            },
+            commentText:[
+                {
+                    userPhoto:'https://img.meituan.net/avatar/087bb500d64d5a656e5f0d0ad4cd24cb17970.jpg@148w_148h_1e_1c',
+                    userName:'虞姬3169',
+                    commentScore:5,
+                    commentTime:'2019-12-02',
+                    commentText:
+                    '在西荷花园那边，上二楼就是了。位置很好找。【等位】不需要等位，随到随进。不浪费时间。【环境】第一次去体验。虽然店不是很大。转一圈都可以看到所有菜品。应有尽有',
+                    commentImage:[
+                        'https://p0.meituan.net/shaitu/830cb5556b19a3be2f923e64803136db2339383.jpg@220w_220h_1e_1c',
+                        'https://p1.meituan.net/shaitu/05667ecfbed8441d7e22776f23f89afd1713389.jpg@220w_220h_1e_1c',
+                        'https://p0.meituan.net/shaitu/870c0b446c7b74059be7cb506d1940481651860.jpg@220w_220h_1e_1c',
+                        'https://p0.meituan.net/shaitu/2566373726abb8b0572111cd632dc9fa2425413.jpg@220w_220h_1e_1c',
+                        'https://p0.meituan.net/shaitu/73748d2cfcf45218b0fa90077a947d6e2189542.jpg@220w_220h_1e_1c',
+                        'https://p1.meituan.net/shaitu/41f2b7316e768e0e42558de77e03bc902089943.jpg@220w_220h_1e_1c'
+                    ],
+                    commentShop:'柒色凉橙烤串·牛排自助餐厅（西荷店）',
+                    shopReply:'尊敬的顾客，您好，感谢您的认真评价，您的认可就是我们前进的动力，期待您的下次光临，祝您天天开心！'
+                },
+                {
+                    userPhoto:'https://img.meituan.net/avatar/087bb500d64d5a656e5f0d0ad4cd24cb17970.jpg@148w_148h_1e_1c',
+                    userName:'虞姬3170',
+                    commentScore:5,
+                    commentTime:'2019-12-02',
+                    commentText:
+                    '在西荷花园那边，上二楼就是了。位置很好找。【等位】不需要等位，随到随进。不浪费时间。【环境】第一次去体验。虽然店不是很大。转一圈都可以看到所有菜品。应有尽有',
+                    commentTextMore:
+                    '。',
+                    commentImage:[
+                        'https://p0.meituan.net/shaitu/830cb5556b19a3be2f923e64803136db2339383.jpg@220w_220h_1e_1c',
+                        'https://p1.meituan.net/shaitu/05667ecfbed8441d7e22776f23f89afd1713389.jpg@220w_220h_1e_1c',
+                        'https://p0.meituan.net/shaitu/870c0b446c7b74059be7cb506d1940481651860.jpg@220w_220h_1e_1c',
+                        'https://p0.meituan.net/shaitu/2566373726abb8b0572111cd632dc9fa2425413.jpg@220w_220h_1e_1c',
+                        'https://p0.meituan.net/shaitu/73748d2cfcf45218b0fa90077a947d6e2189542.jpg@220w_220h_1e_1c',
+                        'https://p1.meituan.net/shaitu/41f2b7316e768e0e42558de77e03bc902089943.jpg@220w_220h_1e_1c'
+                    ],
+                    commentShop:'柒色凉橙烤串·牛排自助餐厅（西荷店）',
+                    shopReply:'尊敬的顾客，您好，感谢您的认真评价，您的认可就是我们前进的动力，期待您的下次光临，祝您天天开心！'
+                },
+                {
+                    userPhoto:'https://img.meituan.net/avatar/087bb500d64d5a656e5f0d0ad4cd24cb17970.jpg@148w_148h_1e_1c',
+                    userName:'虞姬3171',
+                    commentScore:5,
+                    commentTime:'2019-12-02',
+                    commentText:
+                    '在西荷花园那边，上二楼就是了。位置很好找。【等位】不需要等位，随到随进。不浪费时间。【环境】第一次去体验。虽然店不是很大。转一圈都可以看到所有菜品。应有尽有',
+                    commentTextMore:
+                    '。',
+                    commentImage:[
+                        'https://p0.meituan.net/shaitu/830cb5556b19a3be2f923e64803136db2339383.jpg@220w_220h_1e_1c',
+                        'https://p1.meituan.net/shaitu/05667ecfbed8441d7e22776f23f89afd1713389.jpg@220w_220h_1e_1c',
+                        'https://p0.meituan.net/shaitu/870c0b446c7b74059be7cb506d1940481651860.jpg@220w_220h_1e_1c',
+                        'https://p0.meituan.net/shaitu/2566373726abb8b0572111cd632dc9fa2425413.jpg@220w_220h_1e_1c',
+                        'https://p0.meituan.net/shaitu/73748d2cfcf45218b0fa90077a947d6e2189542.jpg@220w_220h_1e_1c',
+                        'https://p1.meituan.net/shaitu/41f2b7316e768e0e42558de77e03bc902089943.jpg@220w_220h_1e_1c'
+                    ],
+                    commentShop:'柒色凉橙烤串·牛排自助餐厅（西荷店）',
+                    shopReply:'尊敬的顾客，您好，感谢您的认真评价，您的认可就是我们前进的动力，期待您的下次光临，祝您天天开心！'
+                },
+                {
+                    userPhoto:'https://img.meituan.net/avatar/087bb500d64d5a656e5f0d0ad4cd24cb17970.jpg@148w_148h_1e_1c',
+                    userName:'虞姬3172',
+                    commentScore:5,
+                    commentTime:'2019-12-02',
+                    commentText:
+                    '在西荷花园那边，上二楼就是了。位置很好找。【等位】不需要等位，随到随进。不浪费时间。【环境】第一次去体验。虽然店不是很大。转一圈都可以看到所有菜品。应有尽有',
+                    commentTextMore:
+                    '。',
+                    commentImage:[
+                        'https://p0.meituan.net/shaitu/830cb5556b19a3be2f923e64803136db2339383.jpg@220w_220h_1e_1c',
+                        'https://p1.meituan.net/shaitu/05667ecfbed8441d7e22776f23f89afd1713389.jpg@220w_220h_1e_1c',
+                        'https://p0.meituan.net/shaitu/870c0b446c7b74059be7cb506d1940481651860.jpg@220w_220h_1e_1c',
+                        'https://p0.meituan.net/shaitu/2566373726abb8b0572111cd632dc9fa2425413.jpg@220w_220h_1e_1c',
+                        'https://p0.meituan.net/shaitu/73748d2cfcf45218b0fa90077a947d6e2189542.jpg@220w_220h_1e_1c',
+                        'https://p1.meituan.net/shaitu/41f2b7316e768e0e42558de77e03bc902089943.jpg@220w_220h_1e_1c'
+                    ],
+                    commentShop:'柒色凉橙烤串·牛排自助餐厅（西荷店）',
+                    shopReply:'尊敬的顾客，您好，感谢您的认真评价，您的认可就是我们前进的动力，期待您的下次光临，祝您天天开心！'
+                }
+            ],
+            recommendShop:[
+                {
+                    adr:'未央区',
+                    type:'单人自助餐',
+                    price:56.8,
+                    originPrice:'62',
+                    hasSell:888
+                },
+                {
+                    adr:'西稍门',
+                    type:'单人自助',
+                    price:45.9,
+                    originPrice:'49',
+                    hasSell:1099
+                },
+                {
+                    adr:'李家村',
+                    type:'晚市活动价',
+                    price:45.9,
+                    originPrice:'78',
+                    hasSell:2582
+                },
+                {
+                    adr:'徐家庄',
+                    type:'单人自助票',
+                    price:46,
+                    originPrice:'59',
+                    hasSell:4394
+                },
+                {
+                    adr:'未央区',
+                    type:'单人自助餐',
+                    price:56.8,
+                    originPrice:'62',
+                    hasSell:888
+                },
+                {
+                    adr:'西稍门',
+                    type:'单人自助',
+                    price:45.9,
+                    originPrice:'49',
+                    hasSell:1099
+                },
+                {
+                    adr:'李家村',
+                    type:'晚市活动价',
+                    price:45.9,
+                    originPrice:'78',
+                    hasSell:2582
+                },
+                {
+                    adr:'徐家庄',
+                    type:'单人自助票',
+                    price:46,
+                    originPrice:'59',
+                    hasSell:4394
+                }
+            ]
         }
     }
 }
@@ -228,12 +416,96 @@ export default {
         position: absolute;
         bottom: 6rem;
     }
+    .shop-details{
+        position: relative;
+    }
     .shop-details-inner{
         position: relative;
-        top: -6.29rem;
+        top: -6.21rem;
+        background-color: #f5f5f5;
     }
     .shop-details-item{
         background-color: #fff;
         margin-bottom: .9rem;
+    }
+    .shop-details-item:last-child{
+        margin-bottom: 0;
+    }
+    .footer{
+        position: absolute;
+        bottom: -10.55rem;
+        padding: .9rem 0;
+        width: 100%;
+        background-color: #f5f5f5;
+        color: #06c1ae;
+    }
+    .footer a{
+        color: #06c1ae;
+    }
+    .nav-bread{
+        padding: 0.5rem .9rem 0.9rem;
+    }
+    .footer-btn{
+        padding: 0rem .9rem 1.2rem;
+        position: relative;
+    }
+    .footer-btn-right{
+        position: absolute;
+        right: .9rem;
+    }
+    .footer-btn div{
+        color: #333;
+        display: inline-block;
+        font-size: 14rem;
+    }
+    .btn-item{
+        padding: .35rem 1.2rem;
+        margin-right: .5rem;
+        border: 1px solid #06c1ae;
+    }
+    .btn-city{
+        padding: .35rem 2.6rem;
+    }
+    .footer-nav{
+        padding: 0.9rem 0.9rem;
+    }
+    .footer-nav-item{
+        display: inline-block;
+        padding:0 1.6rem 0 1.6rem; 
+        border-right: 0.02rem solid #666;
+    }
+    .footer-nav-item:last-child{
+        border: none;
+    }
+    .footer-nav-item a{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: #06c1ae;
+        font-weight: 400;
+        font-size: 12rem;
+    }
+    .footer-link{
+        text-align: center;
+        color: #222;
+        padding: 0.9rem 0 1.9rem;
+    }
+    .footer-copyright{
+        position: relative;
+        border-top: 1px solid #999;
+        text-align: center;
+    }
+    .footer-copyright span{
+        display: inline-block;
+        padding: 0 1rem;
+        background-color: #f5f5f5;
+        color: #999;
+        position: relative;
+        top: -0.85rem;
+    }
+    .footer-copyright span a{
+        color: #999;
+        text-decoration: none;
     }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <a href="./ShopDetails.vue" class="toshop-details">
+    <router-link to="/shopdetails" class="toshop-details">
         <div class="foodshoplist-item">
             <div class="item-left">
             <img :src="item.image">
@@ -24,7 +24,7 @@
                 </div>
             </div>
         </div>
-    </a>
+    </router-link>
 </template>
 
 <script>
