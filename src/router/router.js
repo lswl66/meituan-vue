@@ -11,6 +11,18 @@ export default [{
     {
       path: '/shopdetails',
       component: r => require.ensure([], () => r(require('../page/ShopDetails.vue')), 'ShopDetails')
+    },
+    {
+      path: '/login',
+      component: r => require.ensure([], () => r(require('../page/Login.vue')), 'Login')
+    },
+    {
+      path: '/wherephonenumber',
+      component: r => require.ensure([], () => r(require('../page/WherePhoneNumber.vue')), 'WherePhoneNumber')
+    },
+    {
+      path: '*',
+      redirect: '/'
     }
   ]
 }]

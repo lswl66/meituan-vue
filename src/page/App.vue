@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="home">
     <div class="navbar">
       <div class="nav-left navbar-item">
         <a href="#">
@@ -13,9 +13,11 @@
           <span>请输入商家名、品类或者商圈...</span>
         </a>
       </div>
-      <div class="nav-right navbar-item">
-        <img src="https://p0.meituan.net/travelcube/641521461179df7cfb88738dd1ea11ec1031.png">
-      </div>
+      <router-link to="/login" class="tologin">
+        <div class="nav-right navbar-item">
+          <img src="https://p0.meituan.net/travelcube/641521461179df7cfb88738dd1ea11ec1031.png">
+        </div>
+      </router-link>
     </div>
     <div class="banner-download">
       <div class="banner-item">
@@ -487,7 +489,7 @@ export default {
 </script>
 
 <style>
-#app {
+#home {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -677,7 +679,7 @@ export default {
 }
 .footer-nav-item{
   display: inline-block;
-  padding:0 1.6rem 0 1.6rem; 
+  padding:0 1.55rem; 
   border-right: 0.02rem solid #666;
 }
 .footer-nav-item:last-child{

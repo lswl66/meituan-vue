@@ -45,6 +45,8 @@ const state = {
 		}]
 	}],
 	answerid: [], //答案id
+	countryName: '中国',
+	countryCode: '+86'
 }
 
 export default new Vuex.Store({

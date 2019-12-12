@@ -1,8 +1,10 @@
 <template>
     <div class="shop-details">
         <div class="header">
-            <div class="header-item toback-btn">
-                <router-link to='/'><img src="../images/write-toback.png"></router-link>
+            <div class="header-item toback">
+                <router-link to='/'>
+                    <i class="toback-btn"></i>
+                </router-link>
             </div>
             <div class="header-item header-title">团购详情</div>
             <div class="header-item header-icon">
@@ -318,16 +320,18 @@ export default {
         display: flex; 
         position: relative;
     }
-    .toback-btn{
+    .toback{
         display: inline-block;
         width: 4rem;
         text-align: center;
     }
-    .toback-btn img{
-        width: 2rem;
-        height: 2rem;
+    .toback-btn{
+        width: 1.4rem;
+        height: 1.4rem;
+        border-color: #fff;
         position: relative;
-        top: 0.7rem;
+        top: 0.3rem;
+        left: 0.32rem;
     }
     .header-title{
         flex: 1;
